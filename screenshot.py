@@ -1,43 +1,48 @@
-name: 生成模板截图
+import os
+import asyncio
+from playwright.async_api import async_playwright
+import urllib.parse
 
-on:
-  workflow_dispatch: # 手动触发
+BASE_URL = "https://web.vod88.top/349套HTML5+CSS3免费网站模板下载/"
+OUTPUT_DIR = "thumbs"
+MAX_CONCURRENT = 5 # 同时截5个，CF Pages 免费版足够了
 
-jobs:
-  screenshot:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # 允许推送代码
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    steps:
-      - name: 拉取代码
-        uses: actions/checkout@v4
+async def screenshot_one(browser, i):
+    num = str(i).zfill(3)
+    output_path = f"{OUTPUT_DIR}/{num}.jpg"
 
-      - name: 安装 Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+    if os.path.exists(output_path):
+        print(f"{num} 已存在，跳过")
+        return
 
-      - name: 安装依赖
-        run: |
-          pip install playwright
-          playwright install chromium
-          playwright install-deps
+    folder_encoded = urllib.parse.quote("349套HTML5+CSS3免费网站模板下载")
+    url = f"https://web.vod88.top/{folder_encoded}/{num}/"
 
-      - name: 创建截图文件夹
-        run: mkdir -p thumbs
+    page = await browser.new_page(viewport={'width': 1280, 'height': 800})
+    try:
+        await page.goto(url, wait_until='networkidle', timeout=30000)
+        await page.wait_for_timeout(1500) # 等动画加载
+        await page.screenshot(path=output_path, type='jpeg', quality=80)
+        print(f"✅ {num} 完成")
+    except Exception as e:
+        print(f"❌ {num} 失败: {e}")
+    finally:
+        await page.close()
 
-      - name: 执行截图
-        run: python screenshot.py
+async def main():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        tasks = []
+        for i in range(1, 350):
+            if len(tasks) >= MAX_CONCURRENT:
+                await asyncio.gather(*tasks)
+                tasks = []
+            tasks.append(screenshot_one(browser, i))
+        if tasks:
+            await asyncio.gather(*tasks)
+        await browser.close()
 
-      - name: 提交图片
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add thumbs/
-          if git diff --staged --quiet; then
-            echo "没有新截图"
-          else
-            git commit -m "自动生成模板截图 [skip ci]"
-            git push
-          fi
+if __name__ == "__main__":
+    asyncio.run(main())
