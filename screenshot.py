@@ -3,7 +3,7 @@ import asyncio
 from playwright.async_api import async_playwright
 import urllib.parse
 
-BASE_URL = "https://web.vod88.top/349套HTML5+CSS3免费网站模板下载/"
+BASE_URL = "https://web-templates-f0x.pages.dev/349套HTML5+CSS3免费网站模板下载/"
 OUTPUT_DIR = "thumbs"
 MAX_CONCURRENT = 5 # 同时截5个，CF Pages 免费版足够了
 
