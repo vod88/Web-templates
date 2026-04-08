@@ -1,85 +1,148 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>349套HTML5+CSS3行业网站模板 - web.vod88.top</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #0f0f0f; color: #fff; line-height: 1.5; }
-    .header { position: sticky; top: 0; z-index: 100; background: #1a1a1a; padding: 16px 20px; border-bottom: 1px solid #333; backdrop-filter: blur(10px); }
-    .header h1 { font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #fff; }
-    .header input { width: 100%; padding: 12px 16px; background: #2a2a2a; border: 1px solid #444; border-radius: 8px; color: #fff; font-size: 14px; transition: all .2s; }
-    .header input:focus { outline: none; border-color: #4ea1ff; background: #333; }
-    .header input::placeholder { color: #666; }
-    .count { padding: 12px 20px 0; font-size: 13px; color: #888; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 16px 20px 40px; }
-    .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: all .25s ease; }
-    .card:hover { border-color: #4ea1ff; transform: translateY(-4px); box-shadow: 0 8px 24px rgba(78,161,255,.15); }
-    .thumb { width: 100%; aspect-ratio: 16/10; background: linear-gradient(135deg, #1e1e1e 0%, #151515 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; position: relative; }
-    .thumb::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.4) 100%); }
-    .thumb .num { font-size: 36px; font-weight: 700; color: #4ea1ff; position: relative; z-index: 1; letter-spacing: 1px; }
-    .thumb .text { font-size: 12px; color: #777; position: relative; z-index: 1; }
-    .card-bottom { padding: 14px 16px; font-size: 14px; color: #bbb; display: flex; justify-content: space-between; align-items: center; background: #161616; }
-    .card-bottom .id { font-weight: 500; }
-    .card-bottom .tag { font-size: 11px; padding: 3px 8px; background: #2a2a2a; border-radius: 4px; color: #4ea1ff; }
-    .hide { display: none !important; }
-    .footer { text-align: center; padding: 30px 20px 50px; color: #555; font-size: 12px; border-top: 1px solid #222; margin-top: 20px; }
-    @media (max-width: 600px) { .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; padding: 12px; } .thumb .num { font-size: 28px; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>349套HTML5+CSS3免费网站模板</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        #search {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px 20px;
+            margin: 20px auto 0;
+            display: block;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all .3s ease;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #eee;
+            display: block;
+        }
+        .card .title {
+            padding: 16px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 15px;
+        }
+        .card .num {
+            color: #667eea;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>349套 HTML5+CSS3 行业网站模板</h1>
-    <input type="text" id="search" placeholder="输入编号快速搜索，例如：001 / 088 / 256">
-  </div>
-  <div class="count">当前显示 <strong id="count">349</strong> 套模板 · 点击卡片新窗口预览</div>
-  <div class="grid" id="grid"></div>
-  <div class="footer">部署于 Cloudflare Pages · web.vod88.top</div>
+    <div class="container">
+        <header>
+            <h1>349套免费网站模板</h1>
+            <p>HTML5 + CSS3 响应式模板，点击卡片预览，点击新窗口打开</p>
+            <input type="text" id="search" placeholder="搜索模板编号，如：001、088..." onkeyup="filterCards()">
+        </header>
 
-  <script>
-    (function() {
-      const baseDir = '349套HTML5+CSS3各行各业网站模板';
-      const total = 349;
-      const grid = document.getElementById('grid');
-      const countEl = document.getElementById('count');
-      const encodedBase = encodeURIComponent(baseDir);
+        <div class="grid" id="templateGrid">
+            <!-- JS 自动生成 001-349 -->
+        </div>
 
-      for (let i = 1; i <= total; i++) {
-        const num = String(i).padStart(3, '0');
-        const href = `./${encodedBase}/${num}/`;
+        <footer>
+            共 349 套模板 | 部署于 Cloudflare Pages | 域名：web.vod88.top
+        </footer>
+    </div>
 
-        const a = document.createElement('a');
-        a.className = 'card';
-        a.href = href;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        a.dataset.id = num;
-        a.innerHTML = `
-          <div class="thumb">
-            <div class="num">${num}</div>
-            <div class="text">HTML5 模板</div>
-          </div>
-          <div class="card-bottom">
-            <span class="id">模板 ${num}</span>
-            <span class="tag">预览</span>
-          </div>
-        `;
-        grid.appendChild(a);
-      }
+    <script>
+        const grid = document.getElementById('templateGrid');
+        const baseFolder = '349套HTML5+CSS3免费网站模板下载';
+        const total = 349;
 
-      const search = document.getElementById('search');
-      search.addEventListener('input', () => {
-        const v = search.value.trim();
-        let c = 0;
-        document.querySelectorAll('.card').forEach(card => {
-          const show = !v || card.dataset.id.includes(v);
-          card.classList.toggle('hide', !show);
-          if (show) c++;
-        });
-        countEl.textContent = c;
-      });
-    })();
-  </script>
+        // 生成 001-349 的卡片
+        for (let i = 1; i <= total; i++) {
+            const num = String(i).padStart(3, '0'); // 变成 001 格式
+            const card = document.createElement('a');
+            card.className = 'card';
+            card.href = `${baseFolder}/${num}/`;
+            card.target = '_blank';
+            card.setAttribute('data-num', num);
+            
+            card.innerHTML = `
+                <img src="thumbs/${num}.jpg" 
+                     alt="模板 ${num}" 
+                     loading="lazy"
+                     onerror="this.src='https://via.placeholder.com/400x300/f0f2f5/999?text=Template+${num}'">
+                <div class="title">模板 <span class="num">${num}</span></div>
+            `;
+            grid.appendChild(card);
+        }
+
+        // 搜索功能
+        function filterCards() {
+            const keyword = document.getElementById('search').value.trim();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const num = card.getAttribute('data-num');
+                if (num.includes(keyword)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
