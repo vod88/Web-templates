@@ -4,7 +4,7 @@ from playwright.async_api import async_playwright
 
 BASE_URL = "https://web-templates-f0x.pages.dev/349套HTML5+CSS3免费网站模板下载/"
 OUTPUT_DIR = "thumbs"
-MAX_CONCURRENT = 5  # 同时截5个，CF Pages 免费版足够了
+MAX_CONCURRENT = 3  # 降到3个并发，更稳
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -17,11 +17,11 @@ async def screenshot_one(browser, i):
         return
 
     url = f"{BASE_URL}{num}/"
-
     page = await browser.new_page(viewport={'width': 1280, 'height': 800})
     try:
-        await page.goto(url, wait_until='networkidle', timeout=30000)
-        await page.wait_for_timeout(1500)  # 等动画加载
+        # 关键改动：不等 networkidle，只等 DOM 加载
+        await page.goto(url, wait_until='domcontentloaded', timeout=60000)
+        await page.wait_for_timeout(2500)  # 多等2.5秒让图片渲染
         await page.screenshot(path=output_path, type='jpeg', quality=80)
         print(f"✅ {num} 完成")
     except Exception as e:
