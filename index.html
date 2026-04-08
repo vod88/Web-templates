@@ -5,72 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>349套HTML5+CSS3免费网站模板</title>
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        body {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f7fa; color: #333;}
-        .container {max-width: 1400px; margin: 0 auto; padding: 20px;}
-        header {text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; margin-bottom: 30px;}
-        header h1 {font-size: 2.2rem; margin-bottom: 10px;}
-        header p {opacity: 0.9;}
-        #search {width: 100%; max-width: 500px; padding: 14px 20px; margin: 20px auto 0; display: block; border: none; border-radius: 50px; font-size: 16px; outline: none;}
-        .grid {display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;}
-        .card {background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all .3s; text-decoration: none; color: #333; display: block;}
-        .card:hover {transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.12);}
-        .card img {width: 100%; height: 200px; object-fit: cover; background: #eee; display: block;}
-        .card .title {padding: 16px; font-weight: 600; text-align: center; font-size: 15px;}
-        .card .num {color: #667eea; font-family: monospace;}
-        footer {text-align: center; padding: 40px 20px; color: #999; font-size: 14px;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        #search {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px 20px;
+            margin: 20px auto 0;
+            display: block;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all .3s ease;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #eee;
+            display: block;
+        }
+        .card .title {
+            padding: 16px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 15px;
+        }
+        .card .num {
+            color: #667eea;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>349套免费网站模板</h1>
-            <p>HTML5 + CSS3 响应式模板，点击卡片新窗口预览</p>
-            <input type="text" id="search" placeholder="搜索模板编号，如：001、088..." onkeyup="filter()">
+            <p>HTML5 + CSS3 响应式模板，点击卡片预览，点击新窗口打开</p>
+            <input type="text" id="search" placeholder="搜索模板编号，如：001、088..." onkeyup="filterCards()">
         </header>
-        <div class="grid" id="grid">
-<!-- 卡片开始 -->
-<a class="card" data-num="001" href="349套HTML5+CSS3免费网站模板下载/001/" target="_blank"><img src="thumbs/001.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+001'" alt="模板 001"><div class="title">模板 <span class="num">001</span></div></a>
-<a class="card" data-num="002" href="349套HTML5+CSS3免费网站模板下载/002/" target="_blank"><img src="thumbs/002.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+002'" alt="模板 002"><div class="title">模板 <span class="num">002</span></div></a>
-<a class="card" data-num="003" href="349套HTML5+CSS3免费网站模板下载/003/" target="_blank"><img src="thumbs/003.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+003'" alt="模板 003"><div class="title">模板 <span class="num">003</span></div></a>
-<a class="card" data-num="004" href="349套HTML5+CSS3免费网站模板下载/004/" target="_blank"><img src="thumbs/004.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+004'" alt="模板 004"><div class="title">模板 <span class="num">004</span></div></a>
-<a class="card" data-num="005" href="349套HTML5+CSS3免费网站模板下载/005/" target="_blank"><img src="thumbs/005.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+005'" alt="模板 005"><div class="title">模板 <span class="num">005</span></div></a>
-<a class="card" data-num="006" href="349套HTML5+CSS3免费网站模板下载/006/" target="_blank"><img src="thumbs/006.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+006'" alt="模板 006"><div class="title">模板 <span class="num">006</span></div></a>
-<a class="card" data-num="007" href="349套HTML5+CSS3免费网站模板下载/007/" target="_blank"><img src="thumbs/007.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+007'" alt="模板 007"><div class="title">模板 <span class="num">007</span></div></a>
-<a class="card" data-num="008" href="349套HTML5+CSS3免费网站模板下载/008/" target="_blank"><img src="thumbs/008.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+008'" alt="模板 008"><div class="title">模板 <span class="num">008</span></div></a>
-<a class="card" data-num="009" href="349套HTML5+CSS3免费网站模板下载/009/" target="_blank"><img src="thumbs/009.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+009'" alt="模板 009"><div class="title">模板 <span class="num">009</span></div></a>
-<a class="card" data-num="010" href="349套HTML5+CSS3免费网站模板下载/010/" target="_blank"><img src="thumbs/010.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+010'" alt="模板 010"><div class="title">模板 <span class="num">010</span></div></a>
-<a class="card" data-num="011" href="349套HTML5+CSS3免费网站模板下载/011/" target="_blank"><img src="thumbs/011.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+011'" alt="模板 011"><div class="title">模板 <span class="num">011</span></div></a>
-<a class="card" data-num="012" href="349套HTML5+CSS3免费网站模板下载/012/" target="_blank"><img src="thumbs/012.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+012'" alt="模板 012"><div class="title">模板 <span class="num">012</span></div></a>
-<a class="card" data-num="013" href="349套HTML5+CSS3免费网站模板下载/013/" target="_blank"><img src="thumbs/013.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+013'" alt="模板 013"><div class="title">模板 <span class="num">013</span></div></a>
-<a class="card" data-num="014" href="349套HTML5+CSS3免费网站模板下载/014/" target="_blank"><img src="thumbs/014.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+014'" alt="模板 014"><div class="title">模板 <span class="num">014</span></div></a>
-<a class="card" data-num="015" href="349套HTML5+CSS3免费网站模板下载/015/" target="_blank"><img src="thumbs/015.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+015'" alt="模板 015"><div class="title">模板 <span class="num">015</span></div></a>
-<a class="card" data-num="016" href="349套HTML5+CSS3免费网站模板下载/016/" target="_blank"><img src="thumbs/016.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+016'" alt="模板 016"><div class="title">模板 <span class="num">016</span></div></a>
-<a class="card" data-num="017" href="349套HTML5+CSS3免费网站模板下载/017/" target="_blank"><img src="thumbs/017.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+017'" alt="模板 017"><div class="title">模板 <span class="num">017</span></div></a>
-<a class="card" data-num="018" href="349套HTML5+CSS3免费网站模板下载/018/" target="_blank"><img src="thumbs/018.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+018'" alt="模板 018"><div class="title">模板 <span class="num">018</span></div></a>
-<a class="card" data-num="019" href="349套HTML5+CSS3免费网站模板下载/019/" target="_blank"><img src="thumbs/019.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+019'" alt="模板 019"><div class="title">模板 <span class="num">019</span></div></a>
-<a class="card" data-num="020" href="349套HTML5+CSS3免费网站模板下载/020/" target="_blank"><img src="thumbs/020.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+020'" alt="模板 020"><div class="title">模板 <span class="num">020</span></div></a>
-<a class="card" data-num="021" href="349套HTML5+CSS3免费网站模板下载/021/" target="_blank"><img src="thumbs/021.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+021'" alt="模板 021"><div class="title">模板 <span class="num">021</span></div></a>
-<a class="card" data-num="022" href="349套HTML5+CSS3免费网站模板下载/022/" target="_blank"><img src="thumbs/022.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+022'" alt="模板 022"><div class="title">模板 <span class="num">022</span></div></a>
-<a class="card" data-num="023" href="349套HTML5+CSS3免费网站模板下载/023/" target="_blank"><img src="thumbs/023.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+023'" alt="模板 023"><div class="title">模板 <span class="num">023</span></div></a>
-<a class="card" data-num="024" href="349套HTML5+CSS3免费网站模板下载/024/" target="_blank"><img src="thumbs/024.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+024'" alt="模板 024"><div class="title">模板 <span class="num">024</span></div></a>
-<a class="card" data-num="025" href="349套HTML5+CSS3免费网站模板下载/025/" target="_blank"><img src="thumbs/025.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+025'" alt="模板 025"><div class="title">模板 <span class="num">025</span></div></a>
-<a class="card" data-num="026" href="349套HTML5+CSS3免费网站模板下载/026/" target="_blank"><img src="thumbs/026.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+026'" alt="模板 026"><div class="title">模板 <span class="num">026</span></div></a>
-<a class="card" data-num="027" href="349套HTML5+CSS3免费网站模板下载/027/" target="_blank"><img src="thumbs/027.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+027'" alt="模板 027"><div class="title">模板 <span class="num">027</span></div></a>
-<a class="card" data-num="028" href="349套HTML5+CSS3免费网站模板下载/028/" target="_blank"><img src="thumbs/028.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+028'" alt="模板 028"><div class="title">模板 <span class="num">028</span></div></a>
-<a class="card" data-num="029" href="349套HTML5+CSS3免费网站模板下载/029/" target="_blank"><img src="thumbs/029.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+029'" alt="模板 029"><div class="title">模板 <span class="num">029</span></div></a>
-<a class="card" data-num="030" href="349套HTML5+CSS3免费网站模板下载/030/" target="_blank"><img src="thumbs/030.jpg" onerror="this.src='https://via.placeholder.com/400x300/e2e8f0/94a3b8?text=Template+030'" alt="模板 030"><div class="title">模板 <span class="num">030</span></div></a>
-<!-- 为节省篇幅，这里只放了1-30。我把1-349完整版单独发你 -->
+
+        <div class="grid" id="templateGrid">
+            <!-- JS 自动生成 001-349 -->
         </div>
-        <footer>共 349 套模板 | 部署于 Cloudflare Pages | 域名：web.vod88.top</footer>
+
+        <footer>
+            共 349 套模板 | 部署于 Cloudflare Pages | 域名：web.vod88.top
+        </footer>
     </div>
-<script>
-function filter(){
-  var k = document.getElementById('search').value.trim();
-  document.querySelectorAll('.card').forEach(function(c){
-    c.style.display = c.dataset.num.includes(k) ? 'block' : 'none';
-  });
-}
-</script>
+
+    <script>
+        const grid = document.getElementById('templateGrid');
+        const baseFolder = '349套HTML5+CSS3免费网站模板下载';
+        const total = 349;
+
+        // 生成 001-349 的卡片
+        for (let i = 1; i <= total; i++) {
+            const num = String(i).padStart(3, '0'); // 变成 001 格式
+            const card = document.createElement('a');
+            card.className = 'card';
+            card.href = `${baseFolder}/${num}/`;
+            card.target = '_blank';
+            card.setAttribute('data-num', num);
+            
+            card.innerHTML = `
+                <img src="thumbs/${num}.jpg" 
+                     alt="模板 ${num}" 
+                     loading="lazy"
+                     onerror="this.src='https://via.placeholder.com/400x300/f0f2f5/999?text=Template+${num}'">
+                <div class="title">模板 <span class="num">${num}</span></div>
+            `;
+            grid.appendChild(card);
+        }
+
+        // 搜索功能
+        function filterCards() {
+            const keyword = document.getElementById('search').value.trim();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const num = card.getAttribute('data-num');
+                if (num.includes(keyword)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
