@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "web-templates",
+  "compatibility_date": "2026-04-08",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "349套HTML5+CSS3各行各业网站模板"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
